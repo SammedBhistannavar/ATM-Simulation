@@ -9,14 +9,15 @@ import { AuthService } from '../../../../core/guards/auth.service';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   template: `
-   <div class="atm-bg" [style.backgroundImage]="'url(assets/ATM-MACH.jpg)'">
+   <div class="atm-bg" [style.backgroundImage]="'url(assets/ATM_MACHINE-IMG.jpg)'">
 
     <div class="atm-right">
       <div class="atm-card">
 
         <div class="atm-header">
+          <img height="70px" src="./assets/self-service.png" />
           <h1>Reset Password</h1>
-          <p>Enter your email and new password</p>
+          <p>Enter your email and New password</p>
         </div>
 
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -123,7 +124,8 @@ import { AuthService } from '../../../../core/guards/auth.service';
 
     label {
       color: #ededed;
-      font-size: 13px;
+      font-size: 15px;
+      font-weight: 600;
       margin-bottom: 6px;
       display: block;
     }
@@ -166,6 +168,8 @@ import { AuthService } from '../../../../core/guards/auth.service';
       color: #fff;
       border: none;
       border-radius: 8px;
+      font-size:15px;
+      font-weight:600;
       cursor: pointer;
     }
 

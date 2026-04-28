@@ -10,13 +10,13 @@ import { AuthService } from '../../../../core/guards/auth.service';
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   template: `
   <div class="atm-bg"
-   [style.backgroundImage]="'url(assets/ATM-MACH.jpg)'">>
+   [style.backgroundImage]="'url(assets/ATM_MACHINE-IMG.jpg)'">>
 
   <!-- RIGHT LOGIN -->
   <div class="atm-right">
     <div class="atm-card">
       <div class="atm-header">
-       
+        <img height="50px" src="./assets/self-service.png" />
         <h1>ATM Simulation</h1>
         <p>Secure Banking Portal</p>
       </div>
@@ -51,13 +51,6 @@ import { AuthService } from '../../../../core/guards/auth.service';
       <div class="forgot-link">
         <a (click)="goToForgot()" >Forgot Password?</a>
       </div>
-
-      <div class="demo-creds">
-        <p><strong>Demo Credentials:</strong></p>
-        <p>SuperAdmin: superadmin&#64;atm.com / superadmin123</p>
-        <p>Admin: admin&#64;atm.com / admin123</p>
-        <p>User: rahul&#64;example.com / user123</p>
-      </div>
     </div>
   </div>
 
@@ -86,7 +79,7 @@ import { AuthService } from '../../../../core/guards/auth.service';
 /* CARD */
 .atm-card {
   border-radius: 16px;
-  padding: 10px;
+  padding: 5px;
   width: 100%;
   justify-content:center;
   max-width: 420px;
@@ -122,7 +115,7 @@ import { AuthService } from '../../../../core/guards/auth.service';
 
     label {
       display: block;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 600;
       color:  #ededef;;
       margin-bottom: 6px;
@@ -202,26 +195,6 @@ import { AuthService } from '../../../../core/guards/auth.service';
         text-decoration: none;
       cursor: pointer;
     }
-
-    .demo-creds {
-      margin-top: 20px;
-      background: #f0f4f8;
-      border-radius: 8px;
-      padding: 12px;
-      font-size: 12px;
-      color: #0d0c0c;
-      line-height: 1.8;
-    }
-
-    .demo-creds p {
-      margin: 0;
-      color: #161617;
-    }
-
-    .demo-creds strong {
-      color: #121010;
-    }
-
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .atm-left {

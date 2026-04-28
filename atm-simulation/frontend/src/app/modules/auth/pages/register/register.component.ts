@@ -9,14 +9,16 @@ import { AuthService } from '../../../../core/guards/auth.service';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   template: `
-    <div class="atm-bg">
+  <div class="atm-bg"
+   [style.backgroundImage]="'url(assets/ATM_MACHINE-IMG.jpg)'">>
       <div class="atm-card">
-        <div class="atm-header">
-          <div class="atm-logo">🏧</div>
-          <h1>Create Account</h1>
-          <p>Join ATM Simulation Banking</p>
+      <div class="atm-header">
+          <img height="60px" src="./assets/self-service.png" />
+          <div class="text">
+            <h1>Create Account</h1>
+            <p>Join ATM Simulation Banking</p>
+          </div>
         </div>
-
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
           <!-- Name -->
@@ -83,24 +85,34 @@ import { AuthService } from '../../../../core/guards/auth.service';
     .atm-bg { min-height:100vh; display:flex; align-items:center; justify-content:center;
       background:linear-gradient(135deg,#0f2027,#203a43,#2c5364); font-family:'Segoe UI',sans-serif; }
 
-    .atm-card { background:#fff; border-radius:16px; padding:40px; width:100%; max-width:420px;
+    .atm-card {  border-radius:16px; padding:0px; width:100%; max-width:420px;
       box-shadow:0 20px 60px rgba(0,0,0,0.4); }
 
-    .atm-header { text-align:center; margin-bottom:28px; }
+    .atm-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding:10px;
+        margin-left:50px
+      }
 
-    .atm-logo { font-size:56px; margin-bottom:8px; }
+      .atm-header img {
+        display: block;
+      }
 
-    h1 { margin:0; font-size:24px; color:#1a1a2e; font-weight:700; }
-
-    p { margin:4px 0 0; color:#666; font-size:14px; }
+      .atm-header .text h1,
+      .atm-header .text p {
+        margin: 0;
+        color:#fff
+      }
 
     .field { margin-bottom:18px; }
 
-    label { display:block; font-size:13px; font-weight:600; color:#333; margin-bottom:6px; }
+    label { display:block; font-size:15px; font-weight:600; color:#fff; margin-bottom:2px; }
 
     input, select {
       width:100%;
-      padding:12px 14px;
+      padding:11px 14px;
       border:2px solid #e0e0e0;
       border-radius:8px;
       font-size:15px;
@@ -130,9 +142,9 @@ import { AuthService } from '../../../../core/guards/auth.service';
 
     .btn-primary:disabled { opacity:0.6; cursor:not-allowed; }
 
-    .footer-link { text-align:center; margin-top:16px; font-size:14px; color:#555; }
+    .footer-link { text-align:center; margin-top:6px; font-size:14px; color:#fff; }
 
-    .footer-link a { color:#2c5364; font-weight:600; text-decoration:none; }
+    .footer-link a { color:#fff; font-weight:600; text-decoration:none; }
   `]
 })
 export class RegisterComponent {
